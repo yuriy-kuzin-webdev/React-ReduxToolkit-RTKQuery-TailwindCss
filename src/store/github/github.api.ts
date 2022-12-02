@@ -8,9 +8,9 @@ export const githubApi = createApi({
   }),
   endpoints: (build) => ({
     searchUsers: build.query({
-      query: () => {
-        url: `search/users`;
-      },
+      query: () => ({
+        url: `search/users`
+      }),
     }),
   }),
 });
