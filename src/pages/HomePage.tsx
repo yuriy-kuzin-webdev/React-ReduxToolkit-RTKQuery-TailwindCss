@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import RepoCard from "../components/RepoCard";
 import { useDebounce } from "../hooks/debounce";
 import {
   useLazyGetUserReposQuery,
@@ -24,6 +25,7 @@ function HomePage() {
 
   const onListItemClick = (userLogin: string) => {
     fetchRepos(userLogin);
+    setDropdown(false);
   };
 
   return (
@@ -61,7 +63,7 @@ function HomePage() {
             <p className="text-center">Repos are loading...</p>
           )}
           {repos?.map((repo) => (
-            <p>{repo.url}</p>
+            <RepoCard repo={repo} key={repo.id} />
           ))}
         </div>
       </div>
