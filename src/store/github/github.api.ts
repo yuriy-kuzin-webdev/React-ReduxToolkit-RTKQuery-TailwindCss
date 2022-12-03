@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { url } from "inspector";
 import { IRepo, IUser, ServerResponse } from "../../types/types";
 
 export const githubApi = createApi({
